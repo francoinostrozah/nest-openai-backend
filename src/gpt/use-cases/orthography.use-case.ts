@@ -40,9 +40,12 @@ export const orthographyCheckUseCase = async (
     model: 'gpt-3.5-turbo',
     temperature: 0.3,
     max_tokens: 150,
+    response_format: {
+      type: 'json_object',
+    },
   });
 
-  console.log(completion.choices[0]);
+  const jsonResp = JSON.parse(completion.choices[0].message.content);
 
-  return { prompt, apikey: process.env.OPENAI_API_KEY };
+  return jsonResp;
 };
