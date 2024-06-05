@@ -5,5 +5,5 @@ interface Options {
 export const orthographyCheckUseCase = async (options: Options) => {
   const { prompt } = options;
 
-  return { prompt };
+  return { prompt, apikey: process.env.OPENAI_API_KEY };
 };
