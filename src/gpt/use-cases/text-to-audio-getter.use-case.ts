@@ -5,7 +5,7 @@ import { NotFoundException } from '@nestjs/common';
 export const textToAudioGetterUseCase = async (fileId: string) => {
   const filePath = path.resolve(
     __dirname,
-    '../../../generated/audio',
+    '../../../generated/audios',
     `${fileId}.mp3`,
   );
 

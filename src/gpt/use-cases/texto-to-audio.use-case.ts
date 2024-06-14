@@ -22,7 +22,7 @@ export const textToAudioUseCase = async (
 
   const selectedVoice = voices[voice] ?? 'nova';
 
-  const folderPath = path.resolve(__dirname, '../../../generated/audio');
+  const folderPath = path.resolve(__dirname, '../../../generated/audios');
   const speechFile = path.resolve(`${folderPath}/${new Date().getTime()}.mp3`);
 
   fs.mkdirSync(folderPath, { recursive: true });
